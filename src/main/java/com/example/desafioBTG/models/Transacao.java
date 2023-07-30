@@ -1,5 +1,6 @@
 package com.example.desafioBTG.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -11,6 +12,7 @@ public class Transacao {
     @Id
     @GeneratedValue
     private Long id;
+    @JsonBackReference
     @ManyToOne(cascade = {CascadeType.REFRESH})
     @JoinColumn(name = "numero_conta",nullable = false)
     private Conta conta;

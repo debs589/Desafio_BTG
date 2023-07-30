@@ -1,8 +1,10 @@
 package com.example.desafioBTG.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 public class Conta {
@@ -17,11 +19,16 @@ public class Conta {
     private String tipoConta;
     private BigDecimal saldo;
 
-    public Conta(Long numeroConta, Cliente cliente, String tipoConta, BigDecimal saldo) {
+    @OneToMany(mappedBy = "conta")
+    @JsonManagedReference
+    private List<Transacao> listaTransacoesConta;
+
+    public Conta(Long numeroConta, Cliente cliente, String tipoConta, BigDecimal saldo, List<Transacao> listaTransacoesConta) {
         this.numeroConta = numeroConta;
         this.cliente = cliente;
         this.tipoConta = tipoConta;
         this.saldo = saldo;
+        this.listaTransacoesConta = listaTransacoesConta;
     }
 
     public Conta() {
@@ -57,5 +64,13 @@ public class Conta {
 
     public void setSaldo(BigDecimal saldo) {
         this.saldo = saldo;
+    }
+
+    public List<Transacao> getListaTransacoesConta() {
+        return listaTransacoesConta;
+    }
+
+    public void setListaTransacoesConta(List<Transacao> listaTransacoesConta) {
+        this.listaTransacoesConta = listaTransacoesConta;
     }
 }

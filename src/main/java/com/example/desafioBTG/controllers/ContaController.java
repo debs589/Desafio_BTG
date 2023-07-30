@@ -1,6 +1,7 @@
 package com.example.desafioBTG.controllers;
 
 import com.example.desafioBTG.models.Conta;
+import com.example.desafioBTG.models.Transacao;
 import com.example.desafioBTG.services.ContaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,5 +30,9 @@ public class ContaController {
     @GetMapping("/conta/{numeroConta}")
     public Optional<Conta> listarContas(@PathVariable("numeroConta") Long numeroConta){
         return contaService.listarContaId(numeroConta);
+    }
+    @GetMapping("/conta/{id}/transacoes")
+    public List<Transacao> listarContaTransacoes(@PathVariable("id") Long id){
+        return contaService.listarContaId(id).get().getListaTransacoesConta();
     }
 }

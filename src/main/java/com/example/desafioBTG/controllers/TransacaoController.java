@@ -21,14 +21,15 @@ public class TransacaoController {
     private ContaService contaService;
 
     @GetMapping("/transacao")
-    public List<Transacao> listarTransacaos(){
+    public List<Transacao> listarTransacaos() {
         return transacaoService.listarTransacoes();
     }
+
     @PostMapping("/transacao")
-    public Transacao criarTransacao(@RequestBody Transacao transacao){
+    public Transacao criarTransacao(@RequestBody Transacao transacao) {
         Transacao novaTransacao = transacaoService.criarTransacao(transacao);
         Conta conta = contaService.listarContaId(transacao.getConta().getNumeroConta()).get();
-        BigDecimal saldoFinal =  conta.getSaldo().add(novaTransacao.getValor());
+        BigDecimal saldoFinal = conta.getSaldo().add(novaTransacao.getValor());
         conta.setSaldo(saldoFinal);
         contaService.criarConta(conta);
         return novaTransacao;
