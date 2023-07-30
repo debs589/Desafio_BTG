@@ -13,7 +13,10 @@ public class TransacaoService {
     @Autowired
     private TransacaoRepository transacaoRepository;
 
-    public List<Transacao> list() {
+    public List<Transacao> listarTransacoes() {
         return transacaoRepository.findAll();
+    }
+    public Transacao criarTransacao(Transacao transacao){
+        return transacaoRepository.save(transacao);
     }
 }

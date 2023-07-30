@@ -11,8 +11,8 @@ public class Transacao {
     @Id
     @GeneratedValue
     private Long id;
-    @ManyToOne
-    @JoinColumn(name = "numero_conta")
+    @ManyToOne(cascade = {CascadeType.REFRESH})
+    @JoinColumn(name = "numero_conta",nullable = false)
     private Conta conta;
     private BigDecimal valor;
 
