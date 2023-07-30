@@ -13,7 +13,11 @@ public class ContaService {
     @Autowired
     private ContaRepository contaRepository;
 
-    public List<Conta> list() {
+    public List<Conta> listarContas() {
         return contaRepository.findAll();
     }
+    public Conta criarConta(Conta conta){
+        return contaRepository.save(conta);
+    }
+
 }
