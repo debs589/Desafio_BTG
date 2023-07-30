@@ -11,7 +11,7 @@ public class Conta {
     @GeneratedValue
     private Long numeroConta;
 
-    @ManyToOne(cascade = {CascadeType.MERGE})
+    @ManyToOne(cascade = {CascadeType.REFRESH})
     @JoinColumn(name = "cpf",nullable = false)
     private Cliente cliente;
     private String tipoConta;
