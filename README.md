@@ -191,11 +191,3 @@ Deletar TODOS os dados da tabela
 DELETE FROM Cliente;
 ```
 
-
-
-![Diagrama Entidade Relacionamento.png](..%2F..%2F..%2FUsers%2Fdebor%2FDownloads%2FDiagrama%20Entidade%20Relacionamento.png)
-
-
-### Modelo Entidade Relacionamento
-
-![Modelo Entidade Relacionamento vf.png](..%2F..%2F..%2FUsers%2Fdebor%2FDownloads%2FModelo%20Entidade%20Relacionamento%20vf.png)
