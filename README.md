@@ -158,7 +158,7 @@ INSERT INTO Cliente (Cpf, Nome_completo, Telefone, Email, Endereco)
 VALUES ('34597834533', 'Rafaela Denari', '11946573847', 'rafaela.denari@gmail.com, 'Rua Giramundo, 313') 
 ```
 
-Aqui os valores serão preenchidos na ordem das linhas da tabela
+Aqui os valores serão preenchidos na ordem das colunas da tabela
 ```
 INSERT INTO Cliente
 VALUES ('34597834533', 'Rafaela Denari', '11946573847', 'rafaela.denari@gmail.com, 'Rua Giramundo, 313') 
