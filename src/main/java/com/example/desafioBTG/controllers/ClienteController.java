@@ -1,7 +1,6 @@
 package com.example.desafioBTG.controllers;
 
 import com.example.desafioBTG.models.Cliente;
-import com.example.desafioBTG.models.Cliente;
 import com.example.desafioBTG.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
