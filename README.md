@@ -186,7 +186,7 @@ Deletar dados da tabela
 DELETE FROM Cliente
 WHERE Cpf = '77597834533';
 ```
-Deletar TODOS dados da tabela
+Deletar TODOS os dados da tabela
 ```
 DELETE FROM Cliente;
 ```
