@@ -191,3 +191,9 @@ Deletar TODOS os dados da tabela
 DELETE FROM Cliente;
 ```
 
+
+![Diagrama Entidade Relacionamento.png](DER%20e%20MER%2FDiagrama%20Entidade%20Relacionamento.png)
+
+#Modelo Entidade Relacionamento
+
+![Modelo Entidade Relacionamento.png](DER%20e%20MER%2FModelo%20Entidade%20Relacionamento.png)
