@@ -57,48 +57,44 @@ spring.jpa.hibernate.ddl-auto= update
 
 Cadastrando um cliente:
 
-POST/ http://localhost:8080/cliente
 ```
+curl --location --request GET 'http://localhost:8080/cliente' \
+--header 'Content-Type: application/json' \
+--data-raw '
 {
     "cpf": "12345678999",
     "nomeCompleto": "Maria Souza",
     "telefone": "1199845734",
     "email": "maria.souza@gmail.com",
     "endereco": "Rua Amélia Barros, 322"
-}
+}'
 ```
 Cadastrando uma conta:
 
-POST/ http://localhost:8080/conta
 ```
-{
+curl --location 'http://localhost:8080/conta' \
+--header 'Content-Type: application/json' \
+--data '{
     "cliente": {
         "cpf": "12345678999"
     },
     "tipoConta": "corrente",
     "saldo": 1000.00
-}
+}'
 ```
 Consulta por movimentações através do ID da conta:
 
-GET/ http://localhost:8080/conta/252/transacoes
-
 (Nesse exemplo temos os saques e depósitos da conta 252)
 ```
-[
-{
-"id": 54,
-"valor": -95.00
-},
-{
-"id": 55,
-"valor": 100.00
-},
-{
-"id": 102,
-"valor": 100.00
-}
-]
+curl --location --request GET 'http://localhost:8080/conta/252/transacoes' \
+--header 'Content-Type: application/json' \
+--data '{
+    "cliente": {
+        "cpf": "12345678999"
+    },
+    "tipoConta": "corrente",
+    "saldo": 1000.00
+}'
 ```
 # Scripts DDL e DML
 
